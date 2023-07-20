@@ -1,5 +1,32 @@
-**[Știi Cuvinte?](https://play.google.com/store/apps/details?id=com.potterdev.balloonsynonyms)
+**[Știi Cuvinte?](https://play.google.com/store/apps/details?id=com.potterdev.balloonsynonyms)**
+
 ![Game Ad](Games/Balloons/Stii_cuvinte__Ad.gif)
+
+A romanian children's mobile game built in Unity for iOS and Android.
+
+## How to play
+Play and learn new words and languages
+
+Multiple game modes
+
+- Synonyms
+- Antonyms
+- Paronyms
+- English - Romanian
+- German - Romanian
+
+As you progress, you reach different levels of difficulty:
+Difficulty - School Year - Age
+  Easy 1 7-8
+  Medium 2 8-9
+  Hard 3 9-10
+
+Some later levels are locked under in-game purchase.
+
+## How to build
+Use Unity version 2020.3.2f1 to open Games/Balloons/BalloonSynonyms and build.
+
+Also check out [this file](Games/Infrastructure/azure-pipelines-ios.yml) for ios builds in azure devops.
 
 ## License
 MIT License
