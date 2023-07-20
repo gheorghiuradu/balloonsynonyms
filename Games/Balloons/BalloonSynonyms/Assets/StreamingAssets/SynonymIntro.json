@@ -1,0 +1,9 @@
+{
+    "Name": "Sinonime",
+    "Background" : "",
+    "Instructions" : "Pe partea de jos a ecranului va apărea un cuvânt. Caută sinonimul cuvântului printre baloanele de mai sus și apasă pe cel potrivit.",
+    "GameMode": "Synonym",
+    "Explanation": "Un sinonim este un cuvânt care are același înțeles sau aproape același înțeles cu alt cuvânt.",
+    "DictionaryFileName": "SynonymDictionary.json",
+    "ConfigFileName": "SynonymConfig.json"
+}

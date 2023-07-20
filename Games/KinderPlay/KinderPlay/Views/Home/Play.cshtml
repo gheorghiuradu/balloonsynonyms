@@ -1,0 +1,25 @@
+﻿@model Game;
+@{
+    ViewData["Title"] = $"Demo {this.Model.Name}";
+}
+
+<h1>Demo @this.Model.Name</h1>
+<div class="game-container">
+    <div class="row">
+        <iframe src="@this.Model.PlayUrl" class="player"></iframe>
+    </div>
+    <div class="row">
+        <h5>Accesează jocul complet:</h5>
+    </div>
+    <div class="row">
+        <div>
+            <a href="@this.Model.GoogleUrl">
+                <img width="200px;" src="~/img/google-play-badge.png" />
+            </a>
+        </div>
+        <div>
+            <span style="display: inline-block; height: 100%; vertical-align:middle;"></span>
+            <img style="width:140px; vertical-align: middle;" src="~/img/Download_on_the_App_Store_Badge_RO_RGB_blk_100317.png" />
+        </div>
+    </div>
+</div>

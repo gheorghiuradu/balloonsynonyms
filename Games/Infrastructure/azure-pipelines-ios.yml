@@ -1,0 +1,102 @@
+parameters:
+  - name: UNITYCI_VERSION
+    type: string
+    default: "0.11"
+
+trigger:
+  batch: true
+  branches:
+    include:
+      - master
+  paths:
+    include:
+    - Games/Balloons/BalloonSynonyms
+
+variables:
+  - group: AppleDevSettings
+  - name: IMAGE_VERSION
+    value: ${{ parameters.UNITYCI_VERSION }}
+
+
+stages:
+  - stage: UnityBuild
+    dependsOn: []
+    jobs:
+      - job: IOSBuildDocker
+        steps:
+          - task: Bash@3
+            displayName: "Get unity version"
+            inputs:
+              targetType: inline
+              script: |
+                export PROJECT_VERSION=$(cat ProjectVersion.txt | grep m_EditorVersion: | sed "s/m_EditorVersion: //g")
+                export IMAGE_NAME=unityci/editor:$PROJECT_VERSION-ios-$IMAGE_VERSION
+                echo $IMAGE_NAME
+                echo "##vso[task.setvariable variable=IMAGE_NAME;]$IMAGE_NAME"
+              workingDirectory: '$(Build.SourcesDirectory)/Games/Balloons/BalloonSynonyms/ProjectSettings'
+
+          - task: Bash@3
+            displayName: "Build unity project using docker - ios"
+            inputs:
+              targetType: 'inline'
+              script: |      
+                chmod -R +x .
+                export UNITY_LICENSE_CONTENT=$(cat Unity_v2019.x.ulf)
+                docker run -e BUILD_NAME -e UNITY_LICENSE_CONTENT -e BUILD_TARGET -e UNITY_USERNAME -e UNITY_PASSWORD -w /project/ -v $(Build.SourcesDirectory)/Games/Balloons/BalloonSynonyms/:/project/ $IMAGE_NAME /bin/bash -c "/project/unity-build/before_script.sh && /project/unity-build/build.sh"
+              workingDirectory: '$(Build.SourcesDirectory)/Games/Balloons/BalloonSynonyms/unity-build'
+              failOnStderr: false
+            env:
+              UNITY_USERNAME: $(U_USERNAME)
+              UNITY_PASSWORD: $(U_PASSWORD)
+              BUILD_TARGET: iOS
+              BUILD_NAME: BalloonSynonyms
+
+          - task: PublishPipelineArtifact@1
+            inputs:
+              targetPath: '$(Build.SourcesDirectory)/Games/Balloons/BalloonSynonyms/Builds/iOS'
+              artifact: 'Balloons-iOS'
+              publishLocation: 'pipeline'
+
+  - stage: XCodeBuild
+    dependsOn: UnityBuild
+    pool:
+      vmImage: macOS-latest
+    jobs:
+      - job: XCodeBuild
+        steps:
+          - task: InstallAppleCertificate@2
+            inputs:
+              certSecureFile: 'distribution.p12'
+              certPwd: $(CertPwd)
+          
+          - task: InstallAppleProvisioningProfile@1
+            inputs:
+              provProfileSecureFile: 'balloonsynonymsappstoreios.mobileprovision'
+
+          - task: DownloadPipelineArtifact@2
+            inputs:
+              buildType: 'current'
+              targetPath: '$(agent.buildDirectory)'
+          
+          - task: Xcode@5
+            inputs:
+              actions: 'build'
+              configuration: 'Release'
+              sdk: 'iphoneos'
+              xcWorkspacePath: '$(Build.SourcesDirectory)/Games/Balloons/Publish/iOS/Unity-iPhone.xcodeproj'
+              scheme: 'Unity-iPhone'
+              packageApp: true
+              exportPath: '$(Build.ArtifactStagingDirectory)/iOS'
+              signingOption: 'auto'
+              teamId: '3NYLRMK2TP'
+              workingDirectory: '$(Build.SourcesDirectory)/Games/Balloons/Publish/iOS'
+              useXcpretty: false
+
+          - task: AppStoreRelease@1
+            displayName: 'Publish to the App Store TestFlight track'
+            inputs:
+              serviceEndpoint: 'apple-admin'
+              appIdentifier: com.potterdev.balloonsynonyms
+              ipaPath: '$(Build.ArtifactStagingDirectory)/iOS/*.ipa'
+              shouldSkipWaitingForProcessing: true
+              shouldSkipSubmission: true

@@ -1,0 +1,7 @@
+.vs/
+Logs/
+Debug/
+Temp/
+Games/Balloons/BalloonSynonyms/Library/*
+!Games/Balloons/BalloonSynonyms/Library/ScriptAssemblies/
+.DS_Store

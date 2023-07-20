@@ -1,0 +1,10 @@
+﻿[
+  {
+    "Name": "Știi cuvinte?",
+    "Slug": "baloane-cuvinte",
+    "Description": "Joacă și învață cuvinte din limba română, engleză, germană.",
+    "PictureUrl": "/gamefiles/baloane-cuvinte/screenshot.png",
+    "PlayUrl": "/gamefiles/baloane-cuvinte/index.html",
+    "GoogleUrl": "https://play.google.com/store/apps/details?id=com.potterdev.balloonsynonyms"
+  }
+]

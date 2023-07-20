@@ -1,0 +1,9 @@
+{
+    "Name": "Paronime",
+    "Background" : "",
+    "Instructions" : "În partea de jos va apărea un cuvânt. Alege de pe ecran paronimul pentru acest cuvânt.",
+    "GameMode": "Paronym",
+    "Explanation": "Un paronim este un cuvânt asemănător ca formă sau sunet, dar cu înțeles diferit față de alt cuvânt.",
+    "DictionaryFileName": "ParonymDictionary.json",
+    "ConfigFileName": "ParonymConfig.json"
+}

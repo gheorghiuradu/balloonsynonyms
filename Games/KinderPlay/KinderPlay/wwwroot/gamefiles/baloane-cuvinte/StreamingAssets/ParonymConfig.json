@@ -1,0 +1,230 @@
+{
+    "GameMode": "Paronym",
+    "Dictionary": "ParonymDictionary.json",
+    "Background":"BG-game-texture",
+    "LevelType": "Balloon",
+    "Levels": [
+        {
+            "Level": 1,
+            "BalloonSpeed": 1,
+            "Words": [
+                {
+                    "NumberOfWords": 5,
+                    "Difficulty": "Easy"
+                }
+            ],
+            "FakeWords": []
+        },
+        {
+            "Level": 2,
+            "BalloonSpeed": 1.5,
+            "Words": [
+                {
+                    "NumberOfWords": 5,
+                    "Difficulty": "Easy"
+                },
+                {
+                    "NumberOfWords": 2,
+                    "Difficulty": "Medium"
+                }
+            ],
+            "FakeWords": []
+        },
+        {
+            "Level": 3,
+            "BalloonSpeed": 1.7,
+            "Words": [
+                {
+                    "NumberOfWords": 5,
+                    "Difficulty": "Easy"
+                },
+                {
+                    "NumberOfWords": 4,
+                    "Difficulty": "Medium"
+                }
+            ],
+            "FakeWords": [
+                {
+                    "NumberOfWords": 1,
+                    "Difficulty": "Easy"
+                }
+            ]
+        },
+		{
+            "Level": 4,
+            "BalloonSpeed": 1.7,
+            "Words": [
+                {
+                    "NumberOfWords": 3,
+                    "Difficulty": "Easy"
+                },
+                {
+                    "NumberOfWords": 5,
+                    "Difficulty": "Medium"
+                },
+				{
+                    "NumberOfWords": 2,
+                    "Difficulty": "Hard"
+                }
+            ],
+            "FakeWords": [
+                {
+                    "NumberOfWords": 2,
+                    "Difficulty": "Easy"
+                }
+            ]
+        },
+		{
+            "Level": 5,
+            "BalloonSpeed": 1.75,
+            "Words": [
+                {
+                    "NumberOfWords": 5,
+                    "Difficulty": "Easy"
+                },
+                {
+                    "NumberOfWords": 3,
+                    "Difficulty": "Medium"
+                },
+                {
+                    "NumberOfWords": 5,
+                    "Difficulty": "Hard"
+                }
+            ],
+            "FakeWords": [
+                {
+                    "NumberOfWords": 2,
+                    "Difficulty": "Easy"
+                },
+				{
+                    "NumberOfWords": 1,
+                    "Difficulty": "Medium"
+                }
+            ]
+        },
+		{
+            "Level": 6,
+            "BalloonSpeed": 1.5,
+            "Words": [
+                {
+                    "NumberOfWords": 2,
+                    "Difficulty": "Easy"
+                },
+                {
+                    "NumberOfWords": 7,
+                    "Difficulty": "Medium"
+                },
+                {
+                    "NumberOfWords": 5,
+                    "Difficulty": "Hard"
+                }
+            ],
+            "FakeWords": [
+                {
+                    "NumberOfWords": 2,
+                    "Difficulty": "Easy"
+                },
+				{
+                    "NumberOfWords": 3,
+                    "Difficulty": "Medium"
+                }
+            ]
+        },
+		{
+            "Level": 7,
+            "BalloonSpeed": 1.5,
+            "Words": [
+                {
+                    "NumberOfWords": 1,
+                    "Difficulty": "Easy"
+                },
+                {
+                    "NumberOfWords": 9,
+                    "Difficulty": "Medium"
+                },
+                {
+                    "NumberOfWords": 7,
+                    "Difficulty": "Hard"
+                }
+            ],
+            "FakeWords": [
+                {
+                    "NumberOfWords": 1,
+                    "Difficulty": "Easy"
+                },
+				{
+                    "NumberOfWords": 4,
+                    "Difficulty": "Medium"
+                }
+            ]
+        },
+		{
+            "Level": 8,
+            "BalloonSpeed": 1.25,
+            "Words": [
+                {
+                    "NumberOfWords": 9,
+                    "Difficulty": "Medium"
+                },
+                {
+                    "NumberOfWords": 10,
+                    "Difficulty": "Hard"
+                }
+            ],
+            "FakeWords": [
+                {
+                    "NumberOfWords": 3,
+                    "Difficulty": "Medium"
+                },
+				{
+                    "NumberOfWords": 2,
+                    "Difficulty": "Hard"
+                }
+            ]
+        },
+		{
+            "Level": 9,
+            "BalloonSpeed": 1.25,
+            "Words": [
+                {
+                    "NumberOfWords": 9,
+                    "Difficulty": "Medium"
+                },
+                {
+                    "NumberOfWords": 11,
+                    "Difficulty": "Hard"
+                }
+            ],
+            "FakeWords": [
+                {
+                    "NumberOfWords": 1,
+                    "Difficulty": "Medium"
+                },
+				{
+                    "NumberOfWords": 4,
+                    "Difficulty": "Hard"
+                }
+            ]
+        },
+		{
+            "Level": 10,
+            "BalloonSpeed": 1,
+            "Words": [
+                {
+                    "NumberOfWords": 9,
+                    "Difficulty": "Medium"
+                },
+                {
+                    "NumberOfWords": 12,
+                    "Difficulty": "Hard"
+                }
+            ],
+            "FakeWords": [
+				{
+                    "NumberOfWords": 6,
+                    "Difficulty": "Hard"
+                }
+            ]
+        }
+    ]
+}

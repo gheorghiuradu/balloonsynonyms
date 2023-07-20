@@ -1,0 +1,9 @@
+{
+    "Name": "Antonime",
+    "Background" : "",
+    "Instructions" : "Pe partea de jos a ecranului va apărea un cuvânt. Caută antonimul cuvântului printre cadourile de mai sus și apasă pe cel potrivit.",
+    "GameMode": "Antonym",
+    "Explanation": "Un antonim este un cuvânt cu formă diferită și înțeles opus/contrar față de alt cuvânt.",
+    "DictionaryFileName": "AntonymDictionary.json",
+    "ConfigFileName": "AntonymConfig.json"
+}

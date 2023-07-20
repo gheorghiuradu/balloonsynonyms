@@ -1,0 +1,9 @@
+{
+    "Name": "Engleză",
+    "Background" : "",
+    "Instructions" : "În partea de jos va apărea un cuvânt în limba română. Alege de pe ecran cuvântul corespunzător din limba engleză.",
+    "GameMode": "English",
+    "Explanation": "Caută cuvintele în engleză și învață prin joacă.",
+    "DictionaryFileName": "EnglishDictionary.json",
+    "ConfigFileName": "EnglishConfig.json"
+}

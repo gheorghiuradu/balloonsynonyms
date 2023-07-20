@@ -1,0 +1,31 @@
+﻿@model List<Game>;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Jocurile noastre</h1>
+    @{
+        var batches = this.Model.Count % 3;
+        for (int i = 0; i < batches; i++)
+        {
+            var games = this.Model.Skip(i * 3).Take(3);
+            <div class="row">
+                @foreach (var game in games)
+                {
+                    <div class="col-md-4">
+                        <a asp-area="" asp-controller="Home" asp-action="Play" asp-route-slug="@game.Slug">
+                            <div class="card">
+                                <img class="card-img-top" style="height: 19rem;" src="@game.PictureUrl" alt="@game.Name" />
+                                <div class="card-body">
+                                    <h5 class="card-title">@game.Name</h5>
+                                    <p class="card-text">@game.Description</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            </div>
+        }
+    }
+</div>

@@ -1,0 +1,64 @@
+﻿@model KinderPlay.Models.MessageVM
+
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<h1>Contact</h1>
+<div class="card">
+    <section class="card card-header">
+        <h4>KinderPlay</h4>
+    </section>
+    <section class="card card-body">
+        <p>
+            S.C. Shopsoft S.R.L. Iași
+            <br />
+            <b>email: </b>
+            <a href="mailto:kinderplayedu@gmail.com">kinderplayedu@gmail.com</a>
+            <br />
+            <b>tel: </b>
+            <a href="tel:+40753058278">+4 0753058278</a>
+        </p>
+    </section>
+</div>
+
+<h4>Trimite-ne un mesaj</h4>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SendMessage">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="From"
+                       type="email"
+                       placeholder="email@example.com"
+                       required
+                       class="form-control" />
+                <small class="form-text text-muted">
+                    Sunteți de acord cu colectarea și procesarea adresei de email.
+                </small>
+                <span asp-validation-for="From" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Subject"
+                       placeholder="Subiect"
+                       required
+                       class="form-control" />
+                <span asp-validation-for="Subject" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <textarea asp-for="Text"
+                          required
+                          class="form-control"
+                          placeholder="Mesaj...">
+                </textarea>
+                <span asp-validation-for="Text" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Trimite" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
